@@ -14,4 +14,8 @@ export class FoodService {
      return this.foods;
    }
 
+   addFood(newFood: Food) {
+     this.foods.push(newFood);
+   }
+
 }

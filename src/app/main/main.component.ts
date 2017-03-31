@@ -31,4 +31,9 @@ export class MainComponent implements OnInit {
     this.hideFormButton = false;
   }
 
+  submitNewFoodForm(name: string, calories: number, details: string) {
+    var newFood: Food = new Food(name, calories, details);
+    this.foodService.addFood(newFood);
+  }
+
 }

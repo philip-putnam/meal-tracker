@@ -24,6 +24,6 @@
       <br>
       <textarea #newDetails></textarea>
     </div>
-    <button (click)='submitNewFoodForm(newName.value, newCalories.value, newDetails.value)'>Add Food</button>
+    <button (click)="submitNewFoodForm(newName.value, newCalories.value, newDetails.value); newName.value=''; newCalories.value=''; newDetails.value='';hideForm()">Add Food</button>
   </div>
 </div>
