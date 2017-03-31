@@ -1,0 +1,18 @@
+{
+  "name": "meal-tracker",
+  "description": "Meal tracking app for users to track foods and calories",
+  "main": "",
+  "authors": [
+    "Philip Putnam <putnamp989@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
