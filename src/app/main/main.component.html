@@ -1,3 +1,5 @@
-<p>
-  main works!
-</p>
+<h3>Foods currently logged</h3>
+
+<div *ngFor="let food of foods | async">
+  <p>{{food.name}}, {{food.calories}}, {{food.detail}}</p>
+</div>
