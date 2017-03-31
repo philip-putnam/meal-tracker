@@ -8,6 +8,7 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { MainComponent } from './main/main.component';
 import { routing } from './app.routing';
+import { EditFoodComponent } from './edit-food/edit-food.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -19,7 +20,8 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    EditFoodComponent
   ],
   imports: [
     BrowserModule,
