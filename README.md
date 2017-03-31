@@ -43,8 +43,43 @@ This application allows users to track foods they've eaten or plan to by utilizi
   * Add dates to foods
   * Add foods to meals
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Setup
+* In terminal, navigate to desired directory for project and clone project by typing: git clone https://github.com/philip-putnam/meal-tracker
+* In terminal, navigate into project / project directory by typing: cd meal-tracker
+* In terminal, after navigating into project directory, type: npm install
+* In terminal, after navigating into project directory, type: bower install
+* In terminal, after navigating into project directory, type: ng serve (or ng s)
+* In terminal, navigate to project directory and type: atom . (or open project in your preferred program)
+* Create a file named 'api-keys.ts' within src/app (i.e., src/app/api-keys.ts)
+
+* **Requires Firebase**, in web browser, navigate to https://firebase.google.com/ , sign-up for a free account or login
+* Click 'go to console' near the top right of the screen
+* Click 'Add project'
+* Type in a name for the project, (i.e., 'meal-tracker')
+* Click 'database' on the left of screen, then the three vertical dots on the right of the screen above the word 'dismiss', import the mock-foods.json if desired for seed data OR your own json file
+* Click 'RULES' change default ".read" and ".write" both, to "true" or true
+* Click 'Overview' at top left of screen, then click 'Add Firebase to your web app'
+* Copy info 'var config' info, i.e:
+            var config = {
+              apiKey: "xxxx",
+              authDomain: "xxxx.firebaseapp.com",
+              databaseURL: "https://xxxx.firebaseio.com",
+              storageBucket: "xxxx.appspot.com",
+              messagingSenderId: "xxxx"
+            };
+
+    Where "x"s represent your actual API key found here
+
+* Copy this information into the file 'api-keys.ts' however modify it with the following format:
+        export var masterFirebaseConfig = {
+          apiKey: "xxxx",
+          authDomain: "xxxx.firebaseapp.com",
+          databaseURL: "https://xxxx.firebaseio.com",
+          storageBucket: "xxxx.appspot.com",
+          messagingSenderId: "xxxx"
+        };
+* In web browser, navigate to localhost:4200
+* Enjoy!
 
 ## Further help
 
