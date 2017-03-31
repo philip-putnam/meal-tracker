@@ -12,8 +12,6 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 export class MainComponent implements OnInit {
   foods: FirebaseListObservable<any[]>;
-  displayFoods: boolean = true;
-  hideDisplayFoods: boolean = false;
   addFoodButton: boolean = true;
   hideAddFoodFormButton: boolean = false;
   editFoodButton: boolean = true;
@@ -38,25 +36,6 @@ export class MainComponent implements OnInit {
   submitNewFoodForm(name: string, calories: number, details: string) {
     var newFood: Food = new Food(name, calories, details);
     this.foodService.addFood(newFood);
-  }
-
-  showEditFoodForm(){
-    this.editFoodButton = false;
-    this.displayFoods = false;
-    this.addFoodButton = false;
-    this.hideEditFoodButton = true;
-  }
-
-  hideEditFoodForm(){
-    this.editFoodButton = true;
-    this.hideEditFoodButton = false;
-  }
-
-  cancelEdit() {
-    this.editFoodButton = true;
-    this.displayFoods = true;
-    this.addFoodButton = true;
-    this.hideEditFoodButton = false;
   }
 
 }

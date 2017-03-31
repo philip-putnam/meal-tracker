@@ -1,17 +1,6 @@
 <div class='container'>
 
   <h3>Foods currently logged:</h3>
-
-    <div *ngFor="let food of foods | async">
-      <p>
-        {{food.name}}, {{food.calories}}, {{food.details}}
-
-      </p>
-      <app-edit-food [selectedFood]='food'></app-edit-food>
-    </div>
-
-  <button *ngIf='hideEditFoodButton' (click)='cancelEdit()'>Cancel</button>
-
   <button *ngIf="addFoodButton" (click)="showAddFoodForm()" class='btn btn-primary'>Add Food</button>
   <button *ngIf="hideAddFoodFormButton" (click)="hideForm()" class='btn btn-primary'>Hide form</button>
 
@@ -31,5 +20,30 @@
       <textarea #newDetails></textarea>
     </div>
     <button (click)="submitNewFoodForm(newName.value, newCalories.value, newDetails.value); newName.value=''; newCalories.value=''; newDetails.value='';hideForm()">Add Food</button>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-12'>
+
+      <div *ngFor="let food of foods | async">
+        <div class='row food-row'>
+          <div class='col-md-2'>
+            {{food.name}}
+          </div>
+          <div class='col-md-2'>
+            {{food.calories}}
+          </div>
+          <div class='col-md-8'>
+            {{food.details}}
+          </div>
+          <br><br><br>
+          <div>
+            <app-edit-food [selectedFood]='food'></app-edit-food>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
   </div>
 </div>
