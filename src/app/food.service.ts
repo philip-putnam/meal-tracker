@@ -18,4 +18,15 @@ export class FoodService {
      this.foods.push(newFood);
    }
 
+   getFoodById(foodId: string) {
+     return this.angularFire.database.object('/foods/' + foodId);
+   }
+
+   updateFood(localUpdatedFood) {
+     var foodEntryInFirebase = this.getFoodById(localUpdatedFood.$key);
+     foodEntryInFirebase.update({name: localUpdatedFood.name,
+                                 calories: localUpdatedFood.calories,
+                                 details: localUpdatedFood.details});
+   }
+
 }

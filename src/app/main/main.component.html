@@ -1,15 +1,15 @@
 <div class='container'>
 
   <h3>Foods currently logged:</h3>
-  <div *ngIf='displayFoods'>
+
     <div *ngFor="let food of foods | async">
       <p>
         {{food.name}}, {{food.calories}}, {{food.details}}
-        <button *ngIf='editFoodButton' class='btn btn-info' (click)='showEditFoodForm()'>Edit</button>
+
       </p>
+      <app-edit-food [selectedFood]='food'></app-edit-food>
     </div>
-  </div>
-  <app-edit-food *ngIf='hideEditFoodButton'></app-edit-food>
+
   <button *ngIf='hideEditFoodButton' (click)='cancelEdit()'>Cancel</button>
 
   <button *ngIf="addFoodButton" (click)="showAddFoodForm()" class='btn btn-primary'>Add Food</button>

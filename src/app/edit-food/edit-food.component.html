@@ -1,3 +1,10 @@
-<p>
-  edit-food works!
-</p>
+<label>New Food Name: </label>
+<input [(ngModel)]='selectedFood.name'>
+
+<label>New Food Calories: </label>
+<input [(ngModel)]='selectedFood.calories'>
+
+<label>New Food Details: </label>
+<input [(ngModel)]='selectedFood.details'>
+
+<button (click)='beginUpdatingFood(selectedFood)'>Update</button>
