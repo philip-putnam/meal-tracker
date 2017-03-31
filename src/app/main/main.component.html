@@ -24,16 +24,26 @@
 
   <div class='row'>
     <div class='col-md-12'>
-
+      <div class='row food-labels'>
+        <div class='col-md-2'>
+          Food Name
+        </div>
+        <div class='col-md-2'>
+          Calories
+        </div>
+        <div class='col-md-8'>
+          Details
+        </div>
+      </div>
       <div *ngFor="let food of foods | async">
         <div class='row food-row'>
-          <div class='col-md-2'>
+          <div class='col-md-2 food-name'>
             {{food.name}}
           </div>
-          <div class='col-md-2'>
+          <div class='col-md-2 food-calories'>
             {{food.calories}}
           </div>
-          <div class='col-md-8'>
+          <div class='col-md-8 food-details'>
             {{food.details}}
           </div>
           <br><br><br>
