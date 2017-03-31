@@ -8,4 +8,22 @@
 
   <button *ngIf="addFoodButton" (click)="showAddFoodForm()" class='btn btn-primary'>Add Food</button>
   <button *ngIf="hideFormButton" (click)="hideForm()" class='btn btn-primary'>Hide form</button>
+
+  <div *ngIf='hideFormButton'>
+    <br>
+    <div class='form-group'>
+      <label>Food name: </label>
+      <input #newName>
+    </div>
+    <div class='form-group'>
+      <label>Calories: </label>
+      <input #newCalories>
+    </div>
+    <div class='form-group'>
+      <label>Details: </label>
+      <br>
+      <textarea #newDetails></textarea>
+    </div>
+    <button (click)='submitNewFoodForm(newName.value, newCalories.value, newDetails.value)'>Add Food</button>
+  </div>
 </div>
