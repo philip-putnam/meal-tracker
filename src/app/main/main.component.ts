@@ -9,6 +9,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   styleUrls: ['./main.component.css'],
   providers: [FoodService]
 })
+
 export class MainComponent implements OnInit {
   foods: FirebaseListObservable<any[]>;
 
