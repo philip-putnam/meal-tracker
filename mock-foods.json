@@ -1,0 +1,57 @@
+{
+  "foods": [
+    {
+    "name": "Fried Egg",
+    "calories": "110",
+    "details": "Great source of protein, careful what you cook it with"
+    }, {
+    "name": "Coffee, black",
+    "calories": "10",
+    "details": "Low calorie content if you don't put anything in it!"
+    }, {
+    "name": "Coffee, cream & sugar",
+    "calories": "45",
+    "details": "1 cup, careful how much sugar you put in"
+    }, {
+    "name": "Cooked rice, plain",
+    "calories": "120",
+    "details": "1 cup serving"
+    }, {
+    "name": "Beer",
+    "calories": "200",
+    "details": "1 bottle"
+    }, {
+    "name": "Asparagus",
+    "calories": "20",
+    "details": "Potassium, Vitamin A & C!"
+    }, {
+    "name": "Bell Pepper",
+    "calories": "25",
+    "details": "Amazing source of Vitamin C!"
+    }, {
+    "name": "Broccoli",
+    "calories": "45",
+    "details": "Good source of Potassium and Vitamin C, fiber & a little iron too"
+    }, {
+    "name": "Mushrooms",
+    "calories": "20",
+    "details": "Careful what you cook these with! Extra virgin olive oil vs. butter"
+    }, {
+    "name": "Tomato",
+    "calories": "25",
+    "details": "Good source of Potassium, with Vitamin A & B"
+    }, {
+    "name": "Leaf Lettuce",
+    "calories": "15",
+    "details": "Low calorie, high in Vitamin A"
+    }, {
+    "name": "Burger",
+    "calories": "325",
+    "details": "Watch the toppings, but every once in a while!"
+    }, {
+    "name": "Pizza",
+    "calories": "375",
+    "details": "For 1 portion! MMMMmmm, pizza :)"
+    }
+  ]
+}
