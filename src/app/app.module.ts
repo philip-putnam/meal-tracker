@@ -9,6 +9,7 @@ import { AngularFireModule } from 'angularfire2';
 import { MainComponent } from './main/main.component';
 import { routing } from './app.routing';
 import { EditFoodComponent } from './edit-food/edit-food.component';
+import { CalorieSortPipe } from './calorie-sort.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -21,7 +22,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     MainComponent,
-    EditFoodComponent
+    EditFoodComponent,
+    CalorieSortPipe
   ],
   imports: [
     BrowserModule,

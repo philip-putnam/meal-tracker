@@ -24,6 +24,15 @@
 
   <div class='row'>
     <div class='col-md-12'>
+      <div class='row'>
+        <div class='col-md-8'>
+          <form>
+            <label>Filter foods by calories: </label>
+            <input #calorie type='number' min='0' [(ngModel)]="calories" [ngModelOptions]='{standalone: true}'/>
+            <button (click)="logValue(calorie.value)">Check caloriesFieldValue</button>
+          </form>
+        </div>
+      </div>
       <div class='row food-labels'>
         <div class='col-md-2'>
           Food Name
@@ -35,7 +44,7 @@
           Details
         </div>
       </div>
-      <div *ngFor="let food of foods">
+      <div *ngFor="let food of foods | calorieSort:calories">
         <div class='row food-row'>
           <div class='col-md-2 food-name'>
             {{food.name}}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Food } from '../food.model';
 import { FoodService } from '../food.service';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { CalorieSortPipe } from '../calorie-sort.pipe';
 
 @Component({
   selector: 'app-main',
@@ -45,6 +46,10 @@ export class MainComponent implements OnInit {
   submitNewFoodForm(name: string, calories: number, details: string) {
     var newFood: Food = new Food(name, calories, details);
     this.foodService.addFood(newFood);
+  }
+
+  logValue(calories: number) {
+    console.log(calories);
   }
 
 }
