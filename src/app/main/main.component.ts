@@ -47,9 +47,4 @@ export class MainComponent implements OnInit {
     var newFood: Food = new Food(name, calories, details);
     this.foodService.addFood(newFood);
   }
-
-  logValue(calories: number) {
-    console.log(calories);
-  }
-
 }
