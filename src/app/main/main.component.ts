@@ -11,7 +11,9 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 
 export class MainComponent implements OnInit {
-  foods: FirebaseListObservable<any[]>;
+  foods: Food[] = [];
+  food: Food;
+  subscription;
   addFoodButton: boolean = true;
   hideAddFoodFormButton: boolean = false;
   editFoodButton: boolean = true;
@@ -20,7 +22,14 @@ export class MainComponent implements OnInit {
   constructor(private foodService: FoodService) { }
 
   ngOnInit() {
-    this.foods = this.foodService.getFoods();
+    this.foodService.getFoods().subscribe(result => {
+       this.subscription = result;
+       this.subscription.forEach(food => {
+         this.food = new Food(food['name'], food['calories'], food['details']);
+         this.foods.push(this.food);
+       });
+     });
+    // this.foods = this.foodService.getFoods();
   }
 
   showAddFoodForm() {
