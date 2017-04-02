@@ -26,7 +26,7 @@ export class MainComponent implements OnInit {
     this.foodService.getFoods().subscribe(result => {
        this.subscription = result;
        this.subscription.forEach(food => {
-         this.food = new Food(food['name'], food['calories'], food['details']);
+         this.food = new Food(food['name'], food['calories'], food['details'], food['$key']);
          this.foods.push(this.food);
        });
      });
@@ -44,7 +44,7 @@ export class MainComponent implements OnInit {
   }
 
   submitNewFoodForm(name: string, calories: number, details: string) {
-    var newFood: Food = new Food(name, calories, details);
+    var newFood: Food = new Food(name, calories, details, null);
     this.foodService.addFood(newFood);
   }
 }
