@@ -12,9 +12,7 @@ import { CalorieSortPipe } from '../calorie-sort.pipe';
 })
 
 export class MainComponent implements OnInit {
-  foods: Food[] = [];
-  food: Food;
-  subscription;
+  foods:  FirebaseListObservable<any[]>;
   addFoodButton: boolean = true;
   hideAddFoodFormButton: boolean = false;
   editFoodButton: boolean = true;
@@ -23,14 +21,8 @@ export class MainComponent implements OnInit {
   constructor(private foodService: FoodService) { }
 
   ngOnInit() {
-    this.foodService.getFoods().subscribe(result => {
-       this.subscription = result;
-       this.subscription.forEach(food => {
-         this.food = new Food(food['name'], food['calories'], food['details'], food['$key']);
-         this.foods.push(this.food);
-       });
-     });
-    // this.foods = this.foodService.getFoods();
+    this.foods = this.foodService.getFoods();
+    console.log(this.foods);
   }
 
   showAddFoodForm() {
@@ -44,7 +36,8 @@ export class MainComponent implements OnInit {
   }
 
   submitNewFoodForm(name: string, calories: number, details: string) {
-    var newFood: Food = new Food(name, calories, details, null);
+    var newFood: Food = new Food(name, calories, details);
     this.foodService.addFood(newFood);
   }
+
 }

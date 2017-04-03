@@ -11,6 +11,7 @@ export class FoodService {
    }
 
    getFoods(){
+    //  this.foods.subscribe(result => result.forEach(food => console.log(food['name'])));
      return this.foods;
    }
 
@@ -23,7 +24,7 @@ export class FoodService {
    }
 
    updateFood(localUpdatedFood) {
-     var foodEntryInFirebase = this.getFoodById(localUpdatedFood.key);
+     var foodEntryInFirebase = this.getFoodById(localUpdatedFood.$key);
      foodEntryInFirebase.update({name: localUpdatedFood.name,
                                  calories: localUpdatedFood.calories,
                                  details: localUpdatedFood.details});

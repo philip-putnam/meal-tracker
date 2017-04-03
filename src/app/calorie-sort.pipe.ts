@@ -8,22 +8,28 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class CalorieSortPipe implements PipeTransform {
 
-  transform(input: Food[], calories, operand) {
+  transform(input: any, calories, operand) {
+
     if (calories === undefined || operand === undefined) {
       return input;
-    } else {
-      if (operand === 'greaterThan') {
-        return input.filter(function(food) {
-          return food.calories >= calories;
-        });
-      } else if (operand === 'lessThan') {
-        return input.filter(function(food){
-          return food.calories <= calories;
-        });
-      } else {
-        return input;
-      }
-    }
+    } 
+
+
+    // if (calories === undefined || operand === undefined) {
+    //   return input;
+    // } else {
+    //   if (operand === 'greaterThan') {
+    //     return input.filter(function(food) {
+    //       return food.calories >= calories;
+    //     });
+    //   } else if (operand === 'lessThan') {
+    //     return input.filter(function(food){
+    //       return food.calories <= calories;
+    //     });
+    //   } else {
+    //     return input;
+    //   }
+    // }
   }
 
 }
