@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Food } from './food.model';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Pipe({
@@ -8,7 +7,8 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class CalorieSortPipe implements PipeTransform {
 
-  transform(input: Food[], calories, operand) {
+  transform(input: any, calories, operand) {
+
     if (calories === undefined || operand === undefined) {
       return input;
     } else {
