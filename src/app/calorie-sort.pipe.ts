@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Food } from './food.model';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Pipe({
