@@ -48,7 +48,7 @@
           Details
         </div>
       </div>
-      <div *ngFor="let food of foods | async">
+      <div *ngFor="let food of foods | async | calorieSort:calories:operand">
         <div class='row food-row'>
           <div class='col-md-2 food-name'>
             {{food.name}}
