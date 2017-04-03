@@ -23,14 +23,15 @@ export class MainComponent implements OnInit {
   constructor(private foodService: FoodService) { }
 
   ngOnInit() {
+    this.foods = [];
     this.foodService.getFoods().subscribe(result => {
        this.subscription = result;
        this.subscription.forEach(food => {
          this.food = new Food(food['name'], food['calories'], food['details'], food['$key']);
          this.foods.push(this.food);
        });
+       this.foods.reverse();
      });
-    // this.foods = this.foodService.getFoods();
   }
 
   showAddFoodForm() {
